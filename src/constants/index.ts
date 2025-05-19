@@ -1,7 +1,7 @@
-import project1 from "../assets/projects/project-1.webp";
-import project2 from "../assets/projects/project-2.webp";
-import project3 from "../assets/projects/project-3.webp";
-import project4 from "../assets/projects/project-4.webp";
+import project1 from "../assets/projects/Project1.png";
+import project2 from "../assets/projects/Project2.png";
+import project3 from "../assets/projects/Project3.png";
+// import project4 from "../assets/projects/project-4.webp";
 
 export const HERO_CONTENT = `I'm Irfan Rahim Zabidi, a dedicated Software Engineer at FCS Solutions. I specialize in building and maintaining backend systems for web applications using Python, with a strong focus on performance, scalability, and clean architecture. My work also involves writing efficient SQL queries and managing databases through both raw SQL and ORM frameworks.
 
@@ -42,32 +42,25 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "Portfolio Website",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "A personal portfolio website showcasing projects, skills, and contact information.",
+    technologies: ["HTML", "CSS", "React", "Typescript"],
   },
   {
-    title: "Task Management App",
+    title: "Anime Search Apps",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "A modern React application that allows users to search and discover anime titles using the Jikan API. Built with React, TypeScript, and Tailwind CSS.",
+    technologies: ["HTML", "CSS", "React", "TypeScript"],
   },
   {
-    title: "Portfolio Website",
+    title: "DASHBOARD FOR PROJECTS PROGRESS",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
+    technologies: ["Excel", "Power Apps", "Microsoft Power Bi"],
   },
 ];
 
