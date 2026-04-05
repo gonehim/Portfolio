@@ -1,40 +1,44 @@
-import { PROJECTS } from "../constants"
+import { PROJECTS } from '../constants';
 
 const Projects = () => {
-    return (
-        <div className="pb-4">
-          <h2 className="my-20 text-center text-4xl">Projects</h2>
-          <div>
-            {PROJECTS.map((project, index) => (
-              <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-                <div className="w-full lg:w-1/4">
-                  <img
-                    src={project.image}
-                    width={250}
-                    height={250}
-                    alt={project.title}
-                    className="mb-6 rounded"
-                  />
-                </div>
-                <div className="w-full max-w-xl lg:w-3/4">
-                  <h3 className="mb-2 font-semibold text-2xl">
-                    {project.title}
-                  </h3>
-                  <p className="mb-4 text-stone-400">{project.description}</p>
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium text-stone-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    };
-    
-    export default Projects;
+  return (
+    <section className="pb-4" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" className="my-20 text-center text-4xl">
+        Projects
+      </h2>
+      <ul className="space-y-8" role="list">
+        {PROJECTS.map((project) => (
+          <li key={project.title} className="flex flex-wrap lg:justify-center">
+            <div className="w-full lg:w-1/4">
+              <img
+                src={project.image}
+                width={250}
+                height={250}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+                className="mb-6 rounded"
+              />
+            </div>
+            <article className="w-full max-w-xl lg:w-3/4">
+              <h3 className="mb-2 text-2xl font-semibold">{project.title}</h3>
+              <p className="mb-4 text-stone-400">{project.description}</p>
+              <ul className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+                {project.technologies.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+export default Projects;
