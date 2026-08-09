@@ -28,7 +28,7 @@ const Hero = () => {
               {HERO_CONTENT}
             </p>
             <a
-              href="/Irfan_Rahim_Resume_Word.pdf"
+              href={`${import.meta.env.BASE_URL}Irfan_Rahim_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               download

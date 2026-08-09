@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between py-16">
       <div className="flex shrink-0 items-center">
-        <a href="/" aria-label="Home">
+        <a href={import.meta.env.BASE_URL} aria-label="Home">
           <img src={logo} width={100} height={100} alt="Irfan Rahim logo" className="mx-2" />
         </a>
       </div>

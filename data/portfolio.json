@@ -1,0 +1,176 @@
+{
+  "profile": {
+    "name": "Irfan Rahim Zabidi",
+    "title": "Software Engineer | Certified Data Analyst Associate",
+    "address": "Sungai Petani, Kedah",
+    "email": "irfanrahimzabidi@gmail.com",
+    "linkedin": "www.linkedin.com/in/irfan-rahim-zabidi",
+    "github": "https://github.com/gonehim",
+    "phone": "+6011 19400159",
+    "status": "Married",
+    "nationality": "Malaysian"
+  },
+  "hero": {
+    "content": "I'm Irfan Rahim Zabidi, a dedicated Software Engineer at FCS Solutions. I specialise in building and maintaining backend systems for web applications using Python, with a strong focus on performance, scalability, and clean architecture. My work also involves writing efficient SQL queries and managing databases through both raw SQL and ORM frameworks.\n\nI hold a Bachelor's degree in Mechatronics Engineering from the International Islamic University Malaysia (IIUM), and I'm passionate about creating impactful, tech-driven solutions that solve real-world problems."
+  },
+  "siteProjects": [
+    {
+      "title": "Portfolio Website",
+      "image": "project-1.webp",
+      "description": "A personal portfolio website showcasing projects, skills, and contact information.",
+      "technologies": ["HTML", "CSS", "React", "TypeScript"]
+    },
+    {
+      "title": "Anime Search App",
+      "image": "project-2.webp",
+      "description": "A modern React application that allows users to search and discover anime titles using the Jikan API. Built with React, TypeScript, and Tailwind CSS.",
+      "technologies": ["HTML", "CSS", "React", "TypeScript"]
+    },
+    {
+      "title": "Projects Progress Dashboard",
+      "image": "project-3.webp",
+      "description": "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
+      "technologies": ["Excel", "Power Apps", "Microsoft Power BI"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "FCS Solution",
+      "role": "Software Engineer",
+      "period": "November 2022 – Present",
+      "sections": [
+        {
+          "heading": "Development Team",
+          "bullets": [
+            "Build and maintain unit tests.",
+            "Understanding of SCRUM/AGILE framework.",
+            "Design and build SQL queries (stored procs and ORM).",
+            "Performs other duties as and when required by the management.",
+            "Design and build backend processes and web services (REST) in Python with Flask.",
+            "Develop and enhance features and components that will be utilized across entire platform.",
+            "Work closely with Product, Design, Ops and QA teams to analyse, design, build, test, deploy and maintain multiple system components and applications."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Top Glove Sdn Bhd @ Factory 9",
+      "role": "Automation Engineer",
+      "period": "May 2020 – October 2022",
+      "sections": [
+        {
+          "heading": "Operation Team (Artificial Intelligence Vision Camera)",
+          "bullets": [
+            "Operates and maintain an Artificial Intelligence Vision Camera (AIVC) for glove inspection and rejection automated systems.",
+            "Install AIVC system software and hardware for new lines and ensure the overall system can run efficiently.",
+            "Create a new project to improve operations by automating processes to reduce manpower and resources.",
+            "Create a user manual, specifications, a bill of materials, a standard operating procedure, and a handbook.",
+            "Overseeing performance, breakdown, and handle the situation immediately for first level support.",
+            "Operate and troubleshoot issues and follow up regularly to maintain system efficiency.",
+            "Guide and train end users on functionality, operation, maintenance, troubleshooting.",
+            "Coordinate between teams such as the Big Data team, the QA department and more.",
+            "Simplifying processes improves efficiency in the development of AI projects.",
+            "Get feedback from end users to better improve the current system."
+          ]
+        },
+        {
+          "heading": "Operation Team (Fully Unstripped Removal System)",
+          "bullets": [
+            "In charge to deal with assigned plants for installation. Managed the documentation for overall project progress from quotation and installation."
+          ]
+        },
+        {
+          "heading": "Team Leader (Integration of Indexing Arm Set with Artificial Intelligence)",
+          "bullets": [
+            "In charge to come out with the design for overall system. Major project as the installation covered all plants."
+          ]
+        }
+      ]
+    }
+  ],
+  "resumeProjects": [
+    {
+      "title": "Dashboard for Projects Progress",
+      "period": "March – April 2022",
+      "description": "Developed a dashboard for overall project progress for the team. Created a template project timeline and progress for all projects with Excel. Used Power Apps for data collection. Visualised the overall project progress with Microsoft Power Bi."
+    },
+    {
+      "title": "Fully Unstripped Removal System",
+      "period": "Dec 2021 – Jan 2022",
+      "description": "FURS is used to remove half-stripped (single arm) and unstripped gloves from the former to prevent double dip and the formation of latex marks. The objectives of this system are to 100% remove detected defect gloves such as half-stripped, unstripped, and finger leftover; to prevent double dipping from occurring; to prevent latex marks from happening; and to make 100% removal of OQI and MQI possible. The designing process is used in Solid work and Microsoft Excel (Pivot Table) for data compilation."
+    },
+    {
+      "title": "Indexing Robotic Arm Set",
+      "period": "Dec 2021 – Jan 2022",
+      "description": "The objectives of installing the Indexing Robotic Arm Set System are to detect the problematic carrier set that is producing a high number of defects, to alert the factory PICs about the problematic carrier set, and to prevent the problematic carrier set from continue to create defective gloves. The designing process is used in Solid work and Microsoft Excel (Pivot Table) for data compilation."
+    }
+  ],
+  "certificates": [
+    { "name": "Graduate Engineer", "date": "September 2021" },
+    { "name": "Analysing Data with Power Bi", "date": "February 2022" },
+    { "name": "Microsoft Azure Data Fundamentals", "date": "February 2022" },
+    { "name": "PCEP-Certified Entry-Level Python Programmer", "date": "March 2022" },
+    { "name": "APU Certified Data Analyst Associate", "date": "April 2022" }
+  ],
+  "education": [
+    {
+      "institution": "International Islamic University Malaysia",
+      "period": "2016 – 2020",
+      "detail": "Bachelor of Engineering (Mechatronics) (Honours)",
+      "cgpa": "3.260"
+    },
+    {
+      "institution": "Centre for Foundation Studies, IIUM",
+      "period": "2014 – 2015",
+      "detail": "Foundation in Engineering and Computer Sciences",
+      "cgpa": "3.074"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Artificial Intelligence Vision Camera",
+      "bullets": [
+        "Cost-saving and reduction and manpower",
+        "Successfully removed at least 40 OQI (online quality inspection) worker as for the implementation of AI Vision Camera. 1 OQI worker = RM2000/month.",
+        "In house PLC programming to save RM10 000 per line over 300+ production lines. Projected cost saving = RM 5 000000.",
+        "Lowered DPM and PSI of production thus reduced the company losses."
+      ]
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Microsoft Office Package",
+      "Microsoft Power Bi",
+      "Python Programming",
+      "PLC Programming (Delta & Siemens)",
+      "Solid works"
+    ],
+    "personal": [
+      "Leadership",
+      "Team player",
+      "Communication",
+      "Fast learner and adaptive",
+      "Decision making",
+      "Critical thinking",
+      "Problem solving",
+      "Troubleshooting skills",
+      "Project management"
+    ]
+  },
+  "references": [
+    {
+      "name": "Mr Samil Ali Mohd Jahaya",
+      "role": "Software Engineer, Development",
+      "company": "",
+      "email": "samilali.jahaya@planet1world.com",
+      "phone": "+6010-650 2401"
+    },
+    {
+      "name": "Mr Mohamad Amin Zainul Abidin",
+      "role": "Engineer II, Engineering",
+      "company": "Top Glove Sdn Bhd @ Factory 9",
+      "email": "mohd_amin@topglove.com.my",
+      "phone": "+6014-226 2016"
+    }
+  ]
+}

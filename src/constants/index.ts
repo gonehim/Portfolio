@@ -2,31 +2,17 @@
 import project1 from '../assets/projects/project-1.webp';
 import project2 from '../assets/projects/project-2.webp';
 import project3 from '../assets/projects/project-3.webp';
+import portfolioData from '../../data/portfolio.json';
 
-export const HERO_CONTENT = `I'm Irfan Rahim Zabidi, a dedicated Software Engineer at FCS Solutions. I specialise in building and maintaining backend systems for web applications using Python, with a strong focus on performance, scalability, and clean architecture. My work also involves writing efficient SQL queries and managing databases through both raw SQL and ORM frameworks.
+const imageMap: Record<string, string> = {
+  'project-1.webp': project1,
+  'project-2.webp': project2,
+  'project-3.webp': project3,
+};
 
-I hold a Bachelor's degree in Mechatronics Engineering from the International Islamic University Malaysia (IIUM), and I'm passionate about creating impactful, tech-driven solutions that solve real-world problems.`;
+export const HERO_CONTENT = portfolioData.hero.content;
 
-export const PROJECTS = [
-  {
-    title: 'Portfolio Website',
-    image: project1,
-    description:
-      'A personal portfolio website showcasing projects, skills, and contact information.',
-    technologies: ['HTML', 'CSS', 'React', 'TypeScript'],
-  },
-  {
-    title: 'Anime Search App',
-    image: project2,
-    description:
-      'A modern React application that allows users to search and discover anime titles using the Jikan API. Built with React, TypeScript, and Tailwind CSS.',
-    technologies: ['HTML', 'CSS', 'React', 'TypeScript'],
-  },
-  {
-    title: 'Projects Progress Dashboard',
-    image: project3,
-    description:
-      'An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.',
-    technologies: ['Excel', 'Power Apps', 'Microsoft Power BI'],
-  },
-];
+export const PROJECTS = portfolioData.siteProjects.map((project) => ({
+  ...project,
+  image: imageMap[project.image],
+}));
