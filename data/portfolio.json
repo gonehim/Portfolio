@@ -26,17 +26,6 @@
       ]
     },
     {
-      "title": "Anime Search App",
-      "image": "project-2.webp",
-      "description": "A modern React application that allows users to search and discover anime titles using the Jikan API. Built with React, TypeScript, and Tailwind CSS.",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "React",
-        "TypeScript"
-      ]
-    },
-    {
       "title": "Projects Progress Dashboard",
       "image": "project-3.webp",
       "description": "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
