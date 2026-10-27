@@ -10,9 +10,13 @@ const imageMap: Record<string, string> = {
   'project-3.webp': project3,
 };
 
+export const PROFILE = portfolioData.profile;
+
 export const HERO_CONTENT = portfolioData.hero.content;
 
 export const PROJECTS = portfolioData.siteProjects.map((project) => ({
   ...project,
   image: imageMap[project.image],
 }));
+
+export const CERTIFICATE_COUNT = portfolioData.certificates.length;
