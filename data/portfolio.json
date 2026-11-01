@@ -11,36 +11,557 @@
     "nationality": "Malaysian"
   },
   "hero": {
-    "content": "I'm Irfan Rahim Zabidi, a dedicated Software Engineer at FCS Solutions. I specialise in building and maintaining backend systems for web applications using Python, with a strong focus on performance, scalability, and clean architecture. My work also involves writing efficient SQL queries and managing databases through both raw SQL and ORM frameworks.\n\nI hold a Bachelor's degree in Mechatronics Engineering from the International Islamic University Malaysia (IIUM), and I'm passionate about creating impactful, tech-driven solutions that solve real-world problems."
+    "content": "I'm a Software Engineer and Automation Developer at Toll Group, where I design, build, and support enterprise automation solutions that streamline business operations. My work spans Microsoft Power Platform, Python, SQL, REST APIs, and Azure, connecting systems such as CargoWise, ServiceNow, SharePoint, and Dataverse through XML and JSON integrations.\n\nI take solutions from requirements gathering through to production, with a focus on clean, maintainable, and scalable engineering. I'm now extending that work into AI, intelligent document processing, and Generative AI to deliver smarter automation with measurable business impact.\n\nI hold a Bachelor's degree in Mechatronics Engineering from the International Islamic University Malaysia (IIUM)."
   },
   "siteProjects": [
     {
-      "title": "Portfolio Website",
-      "image": "project-1.webp",
-      "description": "A personal portfolio website showcasing projects, skills, and contact information.",
+      "title": "AI Arrival Notice Processing",
+      "description": "End-to-end automation that picks up carrier arrival notices from a shared mailbox, identifies them with a document classification agent, and extracts shipment details using Azure AI and AI Builder. Low-confidence results go to human-in-the-loop review, validated data is posted to CargoWise One as XML, and exceptions automatically raise ServiceNow incidents. I also own deployment coordination, failure monitoring and production support.",
       "technologies": [
-        "HTML",
-        "CSS",
+        "Power Automate",
+        "Power Apps",
+        "Mendix",
+        "Azure AI",
+        "AI Builder",
+        "SharePoint",
+        "ServiceNow",
+        "CargoWise One",
+        "XML"
+      ],
+      "workflow": [
+        {
+          "label": "Arrival notice email",
+          "tool": "Shared mailbox"
+        },
+        {
+          "label": "Classify document",
+          "tool": "AI agent"
+        },
+        {
+          "label": "Extract shipment data",
+          "tool": "Azure AI · AI Builder"
+        },
+        {
+          "label": "Confidence check",
+          "tool": "Human-in-the-loop"
+        },
+        {
+          "label": "Post to CargoWise",
+          "tool": "CW1 · XML"
+        },
+        {
+          "label": "Raise exceptions",
+          "tool": "ServiceNow"
+        }
+      ]
+    },
+    {
+      "title": "Air Event Milestone Automation",
+      "description": "Multi-carrier flight tracking that collects milestone events from ten airline websites and converts them into CargoWise-ready records. Each airline has its own parser, including Shadow DOM handling, backed by status-code mapping, date normalisation, fuzzy port-code matching and data-quality flagging. Power Automate Desktop orchestrates the Python pipeline and SharePoint upload, and a cloud flow writes job orders and air details to Dataverse.",
+      "technologies": [
+        "Python",
+        "Selenium",
+        "BeautifulSoup",
+        "pandas",
+        "Power Automate Desktop",
+        "Power Automate",
+        "Dataverse",
+        "SharePoint",
+        "CargoWise One"
+      ],
+      "workflow": [
+        {
+          "label": "Trigger run",
+          "tool": "Power Automate Desktop"
+        },
+        {
+          "label": "Scrape airline sites",
+          "tool": "Python · Selenium"
+        },
+        {
+          "label": "Parse & normalise",
+          "tool": "pandas · regex"
+        },
+        {
+          "label": "Map to CW1 events",
+          "tool": "Status-code mapping"
+        },
+        {
+          "label": "Upload results",
+          "tool": "SharePoint"
+        },
+        {
+          "label": "Write job records",
+          "tool": "Dataverse"
+        }
+      ]
+    },
+    {
+      "title": "Sea Container Milestone Automation",
+      "description": "Hybrid Power Automate Desktop and Python solution that tracks container milestones across ten ocean carriers, replacing unreliable legacy desktop flows. Designed for resilience: carriers run in parallel behind a circuit breaker with paced requests, and raw responses are archived for offline reprocessing. The reference carrier implementation matched 9 of 9 events against real shipment data.",
+      "technologies": [
+        "Power Automate Desktop",
+        "Python",
+        "JavaScript",
+        "SharePoint",
+        "CargoWise One"
+      ],
+      "workflow": [
+        {
+          "label": "Orchestrate carriers",
+          "tool": "Power Automate Desktop"
+        },
+        {
+          "label": "Capture tracking data",
+          "tool": "JavaScript"
+        },
+        {
+          "label": "Parse milestones",
+          "tool": "Python"
+        },
+        {
+          "label": "Guard failures",
+          "tool": "Circuit breaker"
+        },
+        {
+          "label": "Archive raw data",
+          "tool": "JSON on disk"
+        },
+        {
+          "label": "Publish milestones",
+          "tool": "SharePoint · CW1"
+        }
+      ]
+    },
+    {
+      "title": "Air Job Exceptions Solution",
+      "description": "Validation app that compares carrier web data with CargoWise leg data and records matches, mismatches and required updates as exceptions in Dataverse, consolidating split-shipment legs along the way. I redesigned the update flow from per-field API calls to a stage-and-commit pattern that sends one combined XML on completion, and built three-tier airport code matching: static map, database lookup, then AI Builder for ambiguous codes.",
+      "technologies": [
+        "Power Apps",
+        "Power Automate",
+        "Dataverse",
+        "CargoWise XML API",
+        "AI Builder"
+      ],
+      "workflow": [
+        {
+          "label": "Carrier web data",
+          "tool": "Dataverse"
+        },
+        {
+          "label": "CW1 leg data",
+          "tool": "XML API"
+        },
+        {
+          "label": "Compare & classify",
+          "tool": "Match · mismatch · update"
+        },
+        {
+          "label": "Resolve port codes",
+          "tool": "Map → DB → AI Builder"
+        },
+        {
+          "label": "Review exceptions",
+          "tool": "Power Apps"
+        },
+        {
+          "label": "Commit update",
+          "tool": "Single XML"
+        }
+      ]
+    },
+    {
+      "title": "Customs Declaration Automation",
+      "description": "Automated customs declaration processing through CargoWise eAdaptor, covering XML request generation, payload validation and exception handling, plus a Power Apps audit workflow that tracks review completion.",
+      "technologies": [
+        "CargoWise eAdaptor",
+        "XML",
+        "Power Automate",
+        "Power Apps",
+        "SQL",
+        "SharePoint"
+      ],
+      "workflow": [
+        {
+          "label": "Declaration data",
+          "tool": "SharePoint · SQL"
+        },
+        {
+          "label": "Build XML request",
+          "tool": "Power Automate"
+        },
+        {
+          "label": "Validate payload",
+          "tool": "Rule checks"
+        },
+        {
+          "label": "Submit declaration",
+          "tool": "CargoWise eAdaptor"
+        },
+        {
+          "label": "Audit review",
+          "tool": "Power Apps"
+        }
+      ]
+    },
+    {
+      "title": "CargoWise Integration Platform",
+      "description": "Enterprise integrations with CargoWise One using Native XML, the Universal API and eAdaptor, from interface builds and connector capability investigations to production troubleshooting.",
+      "technologies": [
+        "CargoWise One",
+        "eAdaptor",
+        "Universal API",
+        "XML",
+        "REST API",
+        "SQL"
+      ],
+      "workflow": [
+        {
+          "label": "Source system",
+          "tool": "REST API · SQL"
+        },
+        {
+          "label": "Transform data",
+          "tool": "XML mapping"
+        },
+        {
+          "label": "Send to CargoWise",
+          "tool": "eAdaptor · Universal API"
+        },
+        {
+          "label": "Process in CW1",
+          "tool": "Native XML"
+        },
+        {
+          "label": "Monitor & fix",
+          "tool": "Production support"
+        }
+      ]
+    },
+    {
+      "title": "AI Human Validation Portal",
+      "description": "Power Apps portal where operators review AI-extracted data, check confidence scores, resolve exceptions and manage user access.",
+      "technologies": [
+        "Power Apps",
+        "Dataverse",
+        "SharePoint"
+      ],
+      "workflow": [
+        {
+          "label": "AI extraction result",
+          "tool": "Dataverse"
+        },
+        {
+          "label": "Review confidence",
+          "tool": "Power Apps"
+        },
+        {
+          "label": "Correct & approve",
+          "tool": "Operator"
+        },
+        {
+          "label": "Store outcome",
+          "tool": "SharePoint"
+        }
+      ]
+    },
+    {
+      "title": "AI Exception Monitoring",
+      "description": "Monitoring app for failed AI processing jobs, with dashboards, manual recovery and deployment support.",
+      "technologies": [
+        "Power Apps",
+        "Mendix",
+        "SharePoint"
+      ],
+      "workflow": [
+        {
+          "label": "Failed AI job",
+          "tool": "SharePoint"
+        },
+        {
+          "label": "Surface on dashboard",
+          "tool": "Power Apps"
+        },
+        {
+          "label": "Investigate",
+          "tool": "Mendix"
+        },
+        {
+          "label": "Recover manually",
+          "tool": "Reprocess job"
+        }
+      ]
+    },
+    {
+      "title": "Shared Mailbox Automation",
+      "description": "Microsoft Graph automation for reading shared mailboxes, routing mail and managing folders, including folder discovery and resolving authorisation errors.",
+      "technologies": [
+        "Microsoft Graph",
+        "Power Automate"
+      ],
+      "workflow": [
+        {
+          "label": "Incoming mail",
+          "tool": "Shared mailbox"
+        },
+        {
+          "label": "Read messages",
+          "tool": "Microsoft Graph"
+        },
+        {
+          "label": "Route by rule",
+          "tool": "Power Automate"
+        },
+        {
+          "label": "Move to folder",
+          "tool": "Status folders"
+        }
+      ]
+    },
+    {
+      "title": "Power Platform ALM & CI/CD",
+      "description": "Application lifecycle management for Power Platform: environment strategy, a Dev to Prod pipeline with managed solutions and versioning, and fixes for solution-aware flow deployment errors.",
+      "technologies": [
+        "Power Platform Pipelines",
+        "Azure DevOps",
+        "Managed Solutions"
+      ],
+      "workflow": [
+        {
+          "label": "Build in Dev",
+          "tool": "Unmanaged solution"
+        },
+        {
+          "label": "Version & export",
+          "tool": "Managed solution"
+        },
+        {
+          "label": "Run pipeline",
+          "tool": "Power Platform Pipelines"
+        },
+        {
+          "label": "Release to Prod",
+          "tool": "Azure DevOps"
+        }
+      ]
+    },
+    {
+      "title": "Azure AI Function App",
+      "description": "Linux-hosted Python Azure Function App connected to Azure AI Foundry, deployed through Azure DevOps with VNet integration, private endpoints, DNS and access configuration.",
+      "technologies": [
+        "Azure Functions",
+        "Python",
+        "Azure Storage",
+        "API Management",
+        "Azure AI Foundry",
+        "Azure CLI"
+      ],
+      "workflow": [
+        {
+          "label": "Commit code",
+          "tool": "Azure DevOps"
+        },
+        {
+          "label": "Build & deploy",
+          "tool": "Azure CLI"
+        },
+        {
+          "label": "Run function",
+          "tool": "Python on Linux"
+        },
+        {
+          "label": "Call AI models",
+          "tool": "Azure AI Foundry"
+        },
+        {
+          "label": "Expose securely",
+          "tool": "APIM · Private endpoint"
+        }
+      ]
+    },
+    {
+      "title": "Azure DevOps Pipelines",
+      "description": "YAML build and release pipelines that deploy the Azure Function App and Power Platform solutions.",
+      "technologies": [
+        "Azure DevOps",
+        "YAML",
+        "Azure CLI"
+      ],
+      "workflow": [
+        {
+          "label": "Commit",
+          "tool": "Git"
+        },
+        {
+          "label": "Build",
+          "tool": "YAML pipeline"
+        },
+        {
+          "label": "Release",
+          "tool": "Azure CLI"
+        },
+        {
+          "label": "Deploy",
+          "tool": "Function App · Power Platform"
+        }
+      ]
+    },
+    {
+      "title": "Power BI Reporting",
+      "description": "Operational dashboards for AI processing performance and business reporting, built on Dataverse and SQL.",
+      "technologies": [
+        "Power BI",
+        "Dataverse",
+        "SQL"
+      ],
+      "workflow": [
+        {
+          "label": "Operational data",
+          "tool": "Dataverse · SQL"
+        },
+        {
+          "label": "Model data",
+          "tool": "Power BI"
+        },
+        {
+          "label": "Publish dashboards",
+          "tool": "AI monitoring"
+        },
+        {
+          "label": "Drive decisions",
+          "tool": "Business teams"
+        }
+      ]
+    },
+    {
+      "title": "Shopee Budget Optimizer",
+      "description": "Personal project that adjusts Shopee ad budgets automatically based on ROAS, detects spending anomalies and sends Telegram alerts, with a web dashboard for monitoring. Runs on a VPS with SQLite storage.",
+      "technologies": [
+        "Python",
         "React",
-        "TypeScript"
+        "SQLite",
+        "Telegram Bot API",
+        "VPS"
+      ],
+      "workflow": [
+        {
+          "label": "Fetch ad stats",
+          "tool": "Shopee Ads"
+        },
+        {
+          "label": "Score ROAS",
+          "tool": "Python"
+        },
+        {
+          "label": "Adjust budgets",
+          "tool": "Rules engine"
+        },
+        {
+          "label": "Detect anomalies",
+          "tool": "SQLite history"
+        },
+        {
+          "label": "Send alerts",
+          "tool": "Telegram"
+        },
+        {
+          "label": "Monitor",
+          "tool": "React dashboard"
+        }
+      ]
+    },
+    {
+      "title": "Portfolio Automation",
+      "description": "This website. A Telegram bot on my VPS turns plain-language messages into validated updates to the site content and commits them through the GitHub Contents API. GitHub Actions then rebuilds and deploys the site to GitHub Pages within minutes, and Git history doubles as the audit trail and rollback.",
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "Telegram Bot API",
+        "DeepSeek",
+        "GitHub Actions",
+        "GitHub Pages",
+        "React",
+        "VPS"
+      ],
+      "workflow": [
+        {
+          "label": "Send update",
+          "tool": "Telegram"
+        },
+        {
+          "label": "Parse & validate",
+          "tool": "DeepSeek · Zod"
+        },
+        {
+          "label": "Commit JSON",
+          "tool": "GitHub API"
+        },
+        {
+          "label": "Build site",
+          "tool": "GitHub Actions"
+        },
+        {
+          "label": "Deploy",
+          "tool": "GitHub Pages"
+        }
       ]
     },
     {
       "title": "Projects Progress Dashboard",
-      "image": "project-3.webp",
       "description": "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
       "technologies": [
         "Excel",
         "Power Apps",
         "Microsoft Power BI"
+      ],
+      "workflow": [
+        {
+          "label": "Plan timelines",
+          "tool": "Excel"
+        },
+        {
+          "label": "Collect updates",
+          "tool": "Power Apps"
+        },
+        {
+          "label": "Visualise progress",
+          "tool": "Power BI"
+        }
       ]
     }
   ],
   "experience": [
     {
-      "company": "FCS Solution",
+      "company": "Toll Group",
+      "role": "Automation Developer",
+      "period": "September 2025 – Present",
+      "sections": [
+        {
+          "heading": "Enterprise Automation & AI",
+          "bullets": [
+            "Design, build and support AI document processing that extracts shipment data from carrier arrival notices and posts it to CargoWise One, with human-in-the-loop validation and automatic ServiceNow incidents for exceptions.",
+            "Built multi-carrier milestone tracking across 10 airlines and 10 ocean carriers using Python and Power Automate Desktop, converting web data into CargoWise-ready records.",
+            "Developed a Power Apps exception solution that validates carrier data against CargoWise, redesigning updates into a stage-and-commit pattern with a single XML submission.",
+            "Automated customs declaration processing through CargoWise eAdaptor with XML validation and an audit workflow."
+          ]
+        },
+        {
+          "heading": "Integration, Platform & DevOps",
+          "bullets": [
+            "Build and troubleshoot CargoWise One integrations using Native XML, the Universal API, eAdaptor and REST APIs.",
+            "Automate shared mailbox processing with Microsoft Graph and Power Automate.",
+            "Manage Power Platform ALM with managed solutions and Dev to Prod pipelines in Azure DevOps.",
+            "Deployed a Python Azure Function App connected to Azure AI Foundry, including VNet integration and private endpoints.",
+            "Build Power BI dashboards for operational and AI processing monitoring.",
+            "Gather business requirements and provide production support across all automation solutions."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "FCS Solutions",
       "role": "Software Engineer",
-      "period": "November 2022 – Present",
+      "period": "November 2022 – September 2025",
       "sections": [
         {
           "heading": "Development Team",
@@ -51,7 +572,8 @@
             "Performs other duties as and when required by the management.",
             "Design and build backend processes and web services (REST) in Python with Flask.",
             "Develop and enhance features and components that will be utilized across entire platform.",
-            "Work closely with Product, Design, Ops and QA teams to analyse, design, build, test, deploy and maintain multiple system components and applications."
+            "Work closely with Product, Design, Ops and QA teams to analyse, design, build, test, deploy and maintain multiple system components and applications.",
+            "Designed databases, integrated REST APIs exchanging JSON and XML, tuned performance and supported production systems."
           ]
         }
       ]
@@ -93,6 +615,16 @@
   ],
   "resumeProjects": [
     {
+      "title": "Portfolio Automation (Telegram Bot CI/CD)",
+      "period": "2026",
+      "description": "Built a Telegram bot that turns plain-language messages into validated updates to the portfolio content and commits them via the GitHub Contents API. GitHub Actions rebuilds and deploys the site to GitHub Pages automatically, with Git history as the audit trail and rollback."
+    },
+    {
+      "title": "Shopee Budget Optimizer",
+      "period": "Personal project",
+      "description": "Python service that adjusts Shopee ad budgets based on ROAS, detects spending anomalies and sends Telegram alerts, with a React dashboard. Deployed on a VPS with SQLite storage."
+    },
+    {
       "title": "Dashboard for Projects Progress",
       "period": "March – April 2022",
       "description": "Developed a dashboard for overall project progress for the team. Created a template project timeline and progress for all projects with Excel. Used Power Apps for data collection. Visualised the overall project progress with Microsoft Power Bi."
@@ -114,7 +646,7 @@
       "date": "September 2021"
     },
     {
-      "name": "Analysing Data with Power Bi",
+      "name": "Analysing Data with Power BI",
       "date": "February 2022"
     },
     {
@@ -162,7 +694,7 @@
   "skills": {
     "technical": [
       "Microsoft Office Package",
-      "Microsoft Power Bi",
+      "Microsoft Power BI",
       "Python Programming",
       "PLC Programming (Delta & Siemens)",
       "Solid works"

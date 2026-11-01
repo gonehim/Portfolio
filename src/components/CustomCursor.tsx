@@ -40,7 +40,8 @@ const CustomCursor = () => {
         setHasMoved(true);
       }
       if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${targetX}px, ${targetY}px)`;
+        // Centering lives here too: an inline transform replaces any class-based translate.
+        dotRef.current.style.transform = `translate(${targetX}px, ${targetY}px) translate(-50%, -50%)`;
       }
     };
 
@@ -53,7 +54,7 @@ const CustomCursor = () => {
       ringX += (targetX - ringX) * 0.18;
       ringY += (targetY - ringY) * 0.18;
       if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px)`;
+        ringRef.current.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
       }
       frame = requestAnimationFrame(tick);
     };
@@ -75,13 +76,13 @@ const CustomCursor = () => {
     <div aria-hidden="true">
       <div
         ref={dotRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white ${
+        className={`pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-white ${
           hasMoved ? 'opacity-100' : 'opacity-0'
         }`}
       />
       <div
         ref={ringRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 transition-[width,height,opacity] duration-200 ${
+        className={`pointer-events-none fixed left-0 top-0 z-[100] rounded-full border border-white/40 transition-[width,height,opacity] duration-200 ${
           isHoveringInteractive ? 'h-10 w-10 border-white/70' : 'h-6 w-6'
         } ${hasMoved ? 'opacity-100' : 'opacity-0'}`}
       />

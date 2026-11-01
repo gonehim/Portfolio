@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Technologies from './components/Technologies';
 import Projects from './components/Projects';
+import Certificates from './components/Certificates';
 import CustomCursor from './components/CustomCursor';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Hero />
           <Technologies />
           <Projects />
+          <Certificates />
         </main>
       </div>
     </div>

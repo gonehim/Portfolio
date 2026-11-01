@@ -15,7 +15,7 @@ const Projects = () => {
         index="01"
         label="Selected Work"
         title="Projects with something to show."
-        description={`${PROJECTS.length} projects spanning web apps, data tooling, and automation.`}
+        description={`${PROJECTS.length} projects spanning enterprise automation, AI, integration, and web.`}
       />
 
       <ul className="divide-y divide-stone-900 border-t border-stone-900" role="list">
@@ -49,17 +49,39 @@ const Projects = () => {
               </button>
 
               {isOpen && (
-                <div className="grid gap-6 pb-8 sm:grid-cols-[200px_1fr]">
-                  <img
-                    src={project.image}
-                    width={200}
-                    height={200}
-                    alt={project.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-40 w-full rounded-lg border border-stone-800 object-cover sm:h-full"
-                  />
-                  <p className="text-sm leading-relaxed text-stone-400">{project.description}</p>
+                <div className="pb-8">
+                  <p className="max-w-3xl text-sm leading-relaxed text-stone-400">{project.description}</p>
+
+                  {project.workflow && project.workflow.length > 0 && (
+                    <div className="mt-8">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-stone-600">
+                        Workflow
+                      </p>
+                      <ol className="mt-4 flex flex-col md:flex-row" aria-label={`${project.title} workflow`}>
+                        {project.workflow.map((step, stepIndex) => (
+                          <li key={step.label} className="flex flex-col items-center md:flex-1 md:flex-row">
+                            <div className="w-full flex-1 self-stretch rounded-lg border border-stone-800 bg-stone-950/60 p-3">
+                              <span className="font-mono text-[10px] text-emerald-400/80">
+                                {String(stepIndex + 1).padStart(2, '0')}
+                              </span>
+                              <p className="mt-1 text-sm text-stone-200">{step.label}</p>
+                              {step.tool && (
+                                <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-stone-500">
+                                  {step.tool}
+                                </p>
+                              )}
+                            </div>
+                            {stepIndex < project.workflow.length - 1 && (
+                              <span className="px-2 py-1 font-mono text-stone-600" aria-hidden="true">
+                                <span className="md:hidden">↓</span>
+                                <span className="hidden md:inline">→</span>
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  )}
                 </div>
               )}
             </Reveal>

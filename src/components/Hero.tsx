@@ -26,9 +26,9 @@ const Hero = () => {
         <span>{PROFILE.address}</span>
       </div>
 
-      <div className="mt-10 flex flex-wrap gap-12 lg:flex-row-reverse lg:items-center">
+      <div className="mt-10 flex flex-col gap-12 lg:flex-row-reverse lg:items-center">
         <div className="w-full lg:w-[42%]">
-          <Reveal className="relative mx-auto max-w-sm lg:mx-0">
+          <Reveal className="relative mx-auto max-w-sm lg:ml-auto lg:mr-0">
             <img
               src={profilePic}
               alt={PROFILE.name}
@@ -47,10 +47,7 @@ const Hero = () => {
 
         <div className="w-full lg:w-[58%]">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-stone-500">
-              Software Engineering · Backend Systems · Clean Architecture
-            </p>
-            <h1 className="mt-4 text-5xl uppercase leading-[0.95] tracking-tight text-stone-100 sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl uppercase leading-[0.95] tracking-tight text-stone-100 sm:text-6xl lg:text-7xl">
               {givenNames}
               <br />
               <em className="font-mono not-italic text-stone-500">{surname}</em>
@@ -60,9 +57,6 @@ const Hero = () => {
           <Reveal delayMs={100}>
             <p className="mt-8 max-w-xl whitespace-pre-line text-base leading-relaxed text-stone-400">
               {HERO_CONTENT}
-            </p>
-            <p className="mt-4 font-mono text-xs uppercase tracking-[0.2em] text-stone-500">
-              {PROFILE.title}
             </p>
           </Reveal>
 

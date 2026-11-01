@@ -16,11 +16,16 @@ export const HeroSchema = z.object({
   content: z.string().min(1).max(2000),
 });
 
+export const WorkflowStepSchema = z.object({
+  label: z.string().min(1).max(40),
+  tool: z.string().max(40),
+});
+
 export const SiteProjectSchema = z.object({
   title: z.string().min(1).max(120),
-  image: z.string().min(1).max(200),
   description: z.string().min(1).max(500),
   technologies: z.array(z.string().max(50)).max(20),
+  workflow: z.array(WorkflowStepSchema).max(6).optional(),
 });
 
 export const ExperienceSectionSchema = z.object({
