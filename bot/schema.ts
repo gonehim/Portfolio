@@ -40,12 +40,6 @@ export const ExperienceEntrySchema = z.object({
   sections: z.array(ExperienceSectionSchema).max(10),
 });
 
-export const ResumeProjectSchema = z.object({
-  title: z.string().min(1).max(150),
-  period: z.string().min(1).max(100),
-  description: z.string().min(1).max(1000),
-});
-
 export const CertificateSchema = z.object({
   name: z.string().min(1).max(150),
   date: z.string().min(1).max(50),
@@ -81,7 +75,6 @@ export const PortfolioSchema = z.object({
   hero: HeroSchema,
   siteProjects: z.array(SiteProjectSchema).max(30),
   experience: z.array(ExperienceEntrySchema).max(30),
-  resumeProjects: z.array(ResumeProjectSchema).max(30),
   certificates: z.array(CertificateSchema).max(30),
   education: z.array(EducationSchema).max(20),
   achievements: z.array(AchievementSchema).max(20),
@@ -98,7 +91,6 @@ export const SECTION_SCHEMAS = {
   hero: { kind: 'object', schema: HeroSchema },
   siteProjects: { kind: 'array', schema: SiteProjectSchema },
   experience: { kind: 'array', schema: ExperienceEntrySchema },
-  resumeProjects: { kind: 'array', schema: ResumeProjectSchema },
   certificates: { kind: 'array', schema: CertificateSchema },
   education: { kind: 'array', schema: EducationSchema },
   achievements: { kind: 'array', schema: AchievementSchema },

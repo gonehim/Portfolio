@@ -17,7 +17,6 @@ const STATS = [
 
 const Hero = () => {
   const exploreRef = useMagnetic<HTMLAnchorElement>();
-  const resumeRef = useMagnetic<HTMLAnchorElement>();
 
   return (
     <section id="home" className="pb-24 pt-6 lg:pb-32" aria-label="Introduction">
@@ -67,16 +66,6 @@ const Hero = () => {
               className="transition-transform duration-200 ease-out rounded-full bg-white px-6 py-3 text-sm font-medium text-stone-900 hover:bg-stone-200"
             >
               Explore work ↘
-            </a>
-            <a
-              ref={resumeRef}
-              href={`${import.meta.env.BASE_URL}Irfan_Rahim_Resume.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-              className="transition-transform duration-200 ease-out rounded-full border border-stone-700 px-6 py-3 text-sm font-medium text-stone-300 hover:border-stone-400 hover:text-white"
-            >
-              Download Resume ↗
             </a>
           </Reveal>
         </div>
